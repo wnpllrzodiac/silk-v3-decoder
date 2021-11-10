@@ -1,0 +1,5 @@
+./encoder  in.pcm out.bit -Fs_API 16000
+
+./decoder out.bit out.pcm -Fs_API 16000
+
+ffmpeg -f s16le -channels 1 -sample_rate 16000 -i out.pcm -c copy out.wav
